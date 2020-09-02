@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-size: 1.5rem;
+  background-color: hsl(0, 0, 98%);
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+main .card {
+  width: 85%;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 1px 10px 0 hsl(229, 6%, 66%);
+  margin: 0.5em auto;
+}
