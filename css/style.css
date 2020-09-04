@@ -3,6 +3,17 @@
   margin: 0;
   padding: 0;
 }
+
+:root {
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --very_dark_blue: hsl(234, 12%, 34%);
+  --grayish_blue: hsl(229, 6%, 66%);
+  --very_light_gray: hsl(0, 0, 98%);
+}
+
 html {
   font-size: 62.5%;
 }
@@ -10,20 +21,104 @@ html {
 body {
   width: 100vw;
   height: 100vh;
+  font-family: "Poppins";
   font-size: 1.5rem;
-  background-color: hsl(0, 0, 98%);
+  background-color: var(--very_light_gray);
+}
+
+header {
+  width: 100vw;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2em 7% 3em 7%;
+  text-align: center;
+  color: var(--grayish_blue);
+}
+header .unbold {
+  font-weight: 200;
+}
+header h1 {
+  color: var(--very_dark_blue);
+  font-size: 2rem;
+}
+header p {
+  margin: 1em 0;
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 
 main {
+  width: 100vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 2.2em;
 }
-
 main .card {
   width: 85%;
+  max-width: 320px;
   border-radius: 5px;
   background-color: white;
-  box-shadow: 0 1px 10px 0 hsl(229, 6%, 66%);
-  margin: 0.5em auto;
+  box-shadow: 0px 5px 15px 0px var(--grayish_blue);
+  margin-bottom: 2em;
+  padding: 2em;
+  font-size: 1.3rem;
+}
+main .card .text {
+  margin-bottom: 2em;
+}
+main .card .img {
+  text-align: right;
+}
+main .card h2 {
+  font-size: 1.9rem;
+  color: var(--very_dark_blue);
+  margin-bottom: 0.3em;
+}
+main .card p {
+  color: var(--grayish_blue);
+  font-weight: 200;
+}
+main .card.supervisor {
+  border-top: 4px solid var(--cyan);
+}
+main .card.team {
+  border-top: 4px solid var(--red);
+}
+main .card.karma {
+  border-top: 4px solid var(--orange);
+}
+main .card.calculator {
+  border-top: 4px solid var(--blue);
+}
+
+@media screen and (min-width: 600px) {
+  header {
+    max-width: 600px;
+  }
+
+  main .card {
+    margin: 1em;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  header {
+    max-width: 800px;
+    margin-bottom: 100px;
+  }
+  header h1 {
+    font-size: 3rem;
+  }
+  main .card {
+    box-shadow: 0px 5px 20px 0px hsl(229, 20%, 83%);
+  }
+  main .card.team {
+    position: relative;
+    bottom: 120px;
+  }
+  main .card.karma {
+    position: absolute;
+    top: 480px;
+  }
 }
